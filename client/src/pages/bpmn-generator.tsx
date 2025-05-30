@@ -97,7 +97,7 @@ export default function BpmnGenerator() {
 
   const generateBpmn = useMutation({
     mutationFn: async (text: string) => {
-      const response = await apiRequest('POST', '/api/generate-bpmn', { text });
+      const response = await apiRequest('POST', 'http://127.0.0.1:5004/generate_bpmn', {text});
       return await response.text();
     },
     onMutate: () => {
