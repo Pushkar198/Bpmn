@@ -2,13 +2,10 @@ from flask import Flask, request, jsonify, make_response
 import asyncio
 import json
 from flask_cors import CORS
-from produce_json_logic import generate_json_from_transcript
-from generate_bpmn_logic import generate_bpmn_from_json
-from app3 import generate_json_main
 import nest_asyncio
 import asyncio
-from autogen1 import main_async
-
+from helper.Bpmn_xml import main_async
+from helper.process_flow_json import generate_json_main
 nest_asyncio.apply() 
 app = Flask(__name__)
 @app.route('/produce_json', methods=['POST'])
